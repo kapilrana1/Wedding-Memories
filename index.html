@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Memories Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700&family=Satisfy&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / HERO ===== -->
+  <header class="hero">
+    <div class="hero-ornament top">❦</div>
+    <div class="hero-content">
+      <p class="hero-subtitle">Our Cherished</p>
+      <h1 class="hero-title">Wedding <em>Memories</em><br>Gallery</h1>
+      <div class="divider"><span class="divider-icon">♥</span></div>
+      <p class="hero-tagline">Every Moment — Every Joy — Every Color</p>
+    </div>
+    <div class="hero-ornament bottom">❦</div>
+    <div class="floating-petals" id="petals-container"></div>
+  </header>
+
+  <!-- ===== STATS BAR ===== -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-num" id="total-count">0</span>
+      <span class="stat-label">Total Photos</span>
+    </div>
+    <div class="stat-divider">|</div>
+    <div class="stat">
+      <span class="stat-num" id="active-count">0</span>
+      <span class="stat-label">Currently Showing</span>
+    </div>
+    <div class="stat-divider">|</div>
+    <div class="stat">
+      <span class="stat-num">12</span>
+      <span class="stat-label">Categories</span>
+    </div>
+  </div>
+
+  <!-- ===== FUNCTION TABS ===== -->
+  <nav class="function-nav" id="function-nav">
+    <div class="function-nav-inner">
+      <button class="fn-tab" data-fn="engagement">
+        <span class="fn-label" style="font-size: 1.3em; font-family: 'Satisfy', cursive;">Engagement</span>
+      </button>
+      <button class="fn-tab" data-fn="haldi-bhat">
+        <span class="fn-label" style="font-size: 1.3em; font-family: 'Satisfy', cursive;">Haldi bhat</span>
+      </button>
+      <button class="fn-tab" data-fn="baraat">
+        <span class="fn-label" style="font-size: 1.3em; font-family: 'Satisfy', cursive;">Baraat</span>
+      </button>
+      <button class="fn-tab" data-fn="varmala">
+        <span class="fn-label" style="font-size: 1.3em; font-family: 'Satisfy', cursive;">Varmala</span>
+      </button>
+      <button class="fn-tab" data-fn="kanyadaan">
+        <span class="fn-label" style="font-size: 1.3em; font-family: 'Satisfy', cursive;">Kanyadaan</span>
+      </button>
+      <button class="fn-tab" data-fn="saatphere">
+        <span class="fn-label" style="font-size: 1.3em; font-family: 'Satisfy', cursive;">Saat phere</span>
+      </button>
+      <button class="fn-tab" data-fn="sindoor">
+        <span class="fn-label" style="font-size: 1.3em; font-family: 'Satisfy', cursive;">Sindoor & mangalsutra</span>
+      </button>
+      <button class="fn-tab" data-fn="vidaai">
+        <span class="fn-label" style="font-size: 1.3em; font-family: 'Satisfy', cursive;">Vidaai</span>
+      </button>
+      <button class="fn-tab" data-fn="reception">
+        <span class="fn-label" style="font-size: 1.3em; font-family: 'Satisfy', cursive;">Reception</span>
+      </button>
+      <button class="fn-tab" data-fn="kashi">
+        <span class="fn-label" style="font-size: 1.3em; font-family: 'Satisfy', cursive;">Kashi</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== GALLERY ===== -->
+
+  <main class="gallery-wrapper" style="background: var(--clr-bg);">
+    <div class="empty-state" id="empty-state">
+      <div class="empty-ring">💍</div>
+      <h3>No Photos Found</h3>
+      <p>Add images to the photos folder and update manifest.json!</p>
+    </div>
+    <div class="no-results" id="no-results" style="display:none">
+      <span>🌸</span>
+      <p>No photos in this ceremony yet.</p>
+    </div>
+    <div class="gallery-masonry" id="gallery" style="will-change: auto;"></div>
+  </main>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lb-close" aria-label="Close">✕</button>
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous">&#8592;</button>
+    <button class="lb-nav lb-next" id="lb-next" aria-label="Next">&#8594;</button>
+    <div class="lb-inner">
+      <img id="lb-img" src="" alt="Photo" />
+      <div class="lb-meta">
+        <span class="lb-tag" id="lb-tag"></span>
+        <span class="lb-counter" id="lb-counter"></span>
+      </div>
+    </div>
+    <div class="lb-bg" id="lb-bg"></div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="divider"><span class="divider-icon">♥</span></div>
+    <p>Made with ❤️ — Your Wedding Memories Gallery</p>
+  </footer>
+
+  <script src="js/gallery.js"></script>
+</body>
+</html>
